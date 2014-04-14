@@ -1,0 +1,190 @@
+CATATAN DIBAWAH INI MENGENAI PENELTIAN YANG SAYA LAKUKAN TENTANG PEMISAHAN SINYAL SUARA MESIN
+----------------------------------------------
+Kebanyakan permasalahan ada pada istilah dan konsep ilmu statistika like: independensi,konvergensi, join density, nopn-gaussian, negentrophy, mutual information, maximum fungsi likelihood, centering-sphering-whitening sinyal, covariance matrix, bayesian/bayes rule, central limit theorem dll. Namun sedikit demi sedikit konsep2 tsb mulai penulis pahami.
+
+-->asal ide
+Mungkin ada yang berminat meneruskan tema penelitiannya Yuniar
+Rahmadana mengenai aplikasi signal processing untuk mechanical vibration.
+Metode yang ingin saya kembangkan kali ini adalah blind source
+separation dan blind equalization.
+Tujuan penelitian ini ada dua hal yang utama (diharapkan) kandidat
+bisa membuat hardware peraga berupa machinery fault simulator.
+Karena skala lab rasanya tidak sulit. Beli beberapa motor pompa
+berputar lalu pompa#1 kondisi normal sedangkan pompa#2,...,pompa#n
+sengaja dirusak dengan variasi kerusakan berbeda.
+Tujuan kedua yang menjadi inti pekerjaan yaitu penerapan teknik
+time-frequency analysis dan blind source separation untuk analisa
+sinyal akustik dari mesin rusak.
+
+Tahap 1 : membuat peraga.
+Tahap 2 : analisa sinyal emisi dan membandingkan hasilnya dengan tugas
+akhir milik Rifqi Anda dan Yuniar Rahmadana.
+Tahap 3 (optional) : deteksi kerusakan bila lebih dari satu mesin
+berjalan sekaligus.
+
+Alternatif, kalau kesulitan membuat peraga; misalnya Ka. Lab. ndak
+mengijinkan karena terbatas ruang; bisa merekam emisi pompa rusak di
+pabrik (plant).
+
+Kontribusi penelitian : selama ini perekaman selalu diasumsikan medan
+dekat, artinya sensor diletakkan dekat mesin yang sudah diketahui
+kerusakannya. Source separation adalah teknik untuk memisahkan
+jumlahan (mixture) dari signal berasal dari y_n sumber dimana n > 1.
+Berdasarkan analisa statistik signal masuk x (dimana x jumlahan y_n),
+misalnya Kullback-Leibler Measurement, Negentropy dan Kurtosis,
+sehingga dapat ditentukan komponen y_1, y_2,...,y_n.
+Implikasinya asumsi medan dekat bisa diabaikan, tanpa mengurangi
+kehandalan akuisisi data.
+
+-->asistensi
+Yang namanya ngerjain tugas akhir pasti tidak pernah lepas dari yang namanya asistensi atau konsultasi. Kata seseorang, semakin sering asistensi, semakin bagus, juga sebaliknya. Saya cenderung setuju dengan dosen pembimbingku, progress itu tiap minggu, bukan satu semester cuma dua kali, once in a week.
+
+-->asistensi1
+Yang dibahas:
+-Beda uncorrelated dengan independent:
+Kalo uncorelated thd waktu kalo independen saling bebas antar variabel, benar demikian..?
+-Pencampuran secara Konvolusi dan secara instantaneous.
+-ttg PKM.
+
+->Masalah mic array
+On-axis dan off-axis (arah mic)
+on-axis : arah tweeter/spiker sesumbu/segaris/langsung dgn telinga kita
+off-axis : misalnya 30 derajat, berarti arahnya menyimpang membentuk sudut 30 derajat dari sumbu/garis on-axis tadi (bisa vertikal bisa horisontal).
+
+slope: kemiringan/kecuraman, biasanya istilah untuk crossover, yaitu besarnya pengurangan kekerasan suara (desibel) dari suatu titik frekuensi yg difilter (x-over point). Misalnya hi-pass pada 1khz dengan slope 12db/oktaf, artinya setiap 1 oktaf di bawah 1khz (500hz,250hz,dst dibagi dua) kekerasan suara berkurang 12db.
+
+Sekali lagi CM
+
+Source:http://www.modifikasi.com/showthread.php?t=16325
+(minggu, 22 maret 2009)
+
+-->Masalah DAQ Matlab
+Tiga tahapan, bila ada hardware baru yang dihubungkan ke matlab:
+1.System setup
+2.Callibration
+3.Trials
+
+
+-->Kalibaris mic
+misalnya input suara 10 dB SPL apakah proporsional dengan tegangan yang terbaca pada
+output dari soundcard bila suara dinaikkan 20, lalu 30, 40, 50 dB SPL...?
+sebaiknya ini dilakukan dulu sebelum pengukuran.
+ada ketidak kompatibelan antara software dan hardware.
+coba pakai matlab dengan function audioplayer/audiorecord
+lihat juga function2 pada data acquisition toolbox.
+Bukan berarti pakai adobe audition bisa, terus perekaman dan hasil perekaman
+merupakan data yang reliable untuk dilakukan analisis lanjut.
+Kalau ada ketidakkonsistenan dalam perekaman, maka data yg diperoleh akan bias dan
+hasil analisanya juga tidak bisa dipercaya.
+---di help matlab ada linearly input-output?
+
+-->recording
+sewaktu perekaman, apakah sudah dilakukan kalibrasi ?
+misalnya input suara 10 dB SPL apakah proporsional dengan tegangan yang terbaca pada
+output dari soundcard bila suara dinaikkan 20, lalu 30, 40, 50 dB SPL ?
+sebaiknya ini dilakukan dulu sebelum pengukuran.
+ada ketidak kompatibelan antara software dan hardware.
+coba pakai matlab dengan function audioplayer/audiorecord
+lihat juga function2 pada data acquisition toolbox.
+Bukan berarti pakai adobe audition bisa, terus perekaman dan hasil perekaman
+merupakan data yang reliable untuk dilakukan analisis lanjut.
+Kalau ada ketidakkonsistenan dalam perekaman, maka data yg diperoleh akan bias dan
+hasil analisanya juga tidak bisa dipercaya.
+
+-->drafting buku TA
+Pendahuluan:
+1. Trend Maintenanc: Condition monitoring - analisa vibrasi
+2. Emisi akustik untuk condition monitoring analog wireless dlm sistem telekomunikasi
+
+Bab 2 BSS:
+1. BSS-ICA MOdel
+2. Microphone Array
+3. Frekeunsi Sesaat
+
+
+Li Li; Liangsheng Qu, "Machine diagnosis with independent component analysis and envelope analysis," Industrial Technology, 2002. IEEE ICIT '02. 2002 IEEE International Conference on , vol.2, no., pp. 1360-1364 vol.2, 11-14 Dec. 2002
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1189377&isnumber=26669
+
+-->asistensi2
+Asistensi IIa (supervisor I, Rabu, 28 april 2009):
+Untuk presentasi progress, yang haru ada di slide:
+1. Pendahuluan
+2. Teori penunjang (3-4 slide):
+- jenis mic,
+- iterasi fixed-point,
+- iterasi newton, harga x sama dengan harga awal dikurangi dengan (harga tsb per turunannya)
+3. Metodologi;
+- flowchart detail
+- sudah sampai mana di chart tersebut
+- Data pengukuran
+- setting percobaan dan spec yang digunakan
+++ : fungsi gx(w^(T)x)
+Error: SSE or MSE
+
+-->progress
+-Aktivitas Kemajuan: 60 % (ini 60 % dari mana??)
+Komentar (Supervisor I):
+1, Sample data diperbanyak --> untuk analisa lebih tajam
+2. Kriteria/Performansi secara numerik untuk beberapa kondisi (rusak, normal, unbalance...) perlu dicantumkan.
+3. Pada tahapan estimasi perlu dijelaskan dahulu secara matematis, meskipun menggunakan matlab.
+4. Perlu validasi.
+
+-->asistensi3
+Yang perlu ditanyakan:
+1. Beda MSE L-2 Distance dan L-4 Distance secara konsep dan pemakaian.
+2. Membedakan suara sinyal estimasi (mana yang unbalance, missalignment dll)
+3. Performansi dan validasi: apa MSE tadi?
+4. Tahapan matematis...
+lain-lain:
+5. Pendaftaran Gemastik 2009
+
+-->matlab
+FastICA masih terlalu sulit (harus dimodifikasi dari progam aslinya), banting stir ke Natural Gradient (Infomax yang dimodifikasi dengan mengalikannya dengan w^T*x) menerapkan multi-stage-nya Saruwatari dengan natural gradient= FDICA + TDICA, programnya mantabbb jaya, berhasil di-run!! tinggal nyari/revisi teorinya.
+
+
+-->asistensi4
+1. gunakan bahasa indonesia, sekali lagi: indonesia not english
+2. jangan diulang-ulang,
+3. kalo terpaksa pake english, miringkan (italic)
+
+
+-->asistensi5
+Asistensi I b (Supervisor II, 6 Juli 2009):
+- Overview Penelitian.
+- Ambil data lagi..?
+
+Asistensi IIb (Supervisor II, hari berikutnya):
+- Setting Percobaan/Demo
+- Bab IV dirombak total
+- Data dimasukkan semua tapi tidak dijelaskan semua
+- Hitung SNR dari metode komputasimu dengan dummy noise
+
+Asistensi IIIb (Supervisor II, Lusa-nya):
+- Gagal demo, waktu terlalu mendesak (besok aja ya Mas..?)
+
+Asistensi IVb (Supervisor II, besok-nya):
+- Demo hardware pengambilan data
+- Demo software matlab
+- ada ketidak-konsistenan sinyal hasil estimasi (berubah-ubah)
+
+
+-->solving the prolem
+-program diperbaiki, ketidak-konsistean disebabkan sinyal uniform noise
+-program sangat lancar dan bekerja dengan baik untuk sinyal motor normal+gaussian noise
+
+
+-->seminar TA
+Surabaya, 5 August 2009
+-mahasiswa tidak ada yg nanya (???)
+-Penguji I tanya: bagaimana cara menentukan jarak antar mic ?
+--> aku menjawab : Seperti halnya dalam domain waktu, maka dalam domain ruang/spatial juga ada yang namanya aliasing, maka untuk menghindari spatial aliasing digunakan formulasi, dSUASANA SIDANG TA
+
+-->sidang TA
+Surabaya, 6 August 2009
+yang tidak terjawab:
+    -tanda/simbol: “didefinisikan” (kluwer-kluwer)
+    -proyeksi matriks=...?
+    -why gaussian forbidden?
+    
+-->finish
+
