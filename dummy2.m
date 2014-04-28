@@ -1,13 +1,16 @@
+% demoed ICA separation with dummy mixed signal (mixed with random
+% matrices)
+clear all; clc;
+
 t=0:pi/100:10*pi;
 
 s1=sin(2*t);
 s2=sign(sin(3*t));
 
-% x1=0.2*s1+0.7*s2;
-% x2=0.6*s2+0.3*s1;
+%x1=0.2*s1+0.7*s2;
+%x2=0.6*s2+0.3*s1;
 
 sources=[s1;s2];
-
 
 [N,P]=size(sources);                 % P=17408, N=2, for example
 permute=randperm(P);                 % generate a permutation vector
@@ -42,7 +45,7 @@ Id=eye(M);                              % for artifial data, use this
 L=0.001; B=30; for I=1:100, sep; end;
 %***************************************
 
-mixes=a*sources;       % make mixed sources
+mixes=a*sources;         % make mixed sources
 % sound(mixes(1,:))      % play the first one (if it is audio)
 figure(1)
 subplot(211); plot(mixes(1,:))       % plot the first one (if it is another signal)

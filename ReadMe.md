@@ -4,6 +4,8 @@ TugasAkhir-ICA/ReadMe.md - Panduan Skrip Tugas Akhir bagustris
 <br/>NRP: 2405100019
 <br/>Programming Language: Matlab　/　Octave
 
+File pdf: [TABagus.pdf](https://dl.dropboxusercontent.com/u/91803768/TAbagus.pdf)
+
 List file:
 
 - fp_tdica.m : Program pemisahan sinyal suara dalam domain waktu
@@ -15,6 +17,11 @@ List file:
 - ifgram.m : Fungsi untuk menghitung/plot frekuensi sesaat
 - extractrax.m : Fungsi untuk mengekstrak Peak amplitude (frekuensi sesaat)
 - colinterpvals.m : Fungsi untuk menginterpolasi kolom (frekuensi sesaat)
+
+
+Git Clone
+
+Untuk mengcopy file ini dalam satu folder, gunakan: $ git clone git@github.com:bagustris/TugasAkhir-ICA.git
 
 
 
