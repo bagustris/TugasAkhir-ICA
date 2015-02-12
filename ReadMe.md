@@ -21,7 +21,7 @@ List file:
 
 Git Clone
 
-Untuk mengcopy file ini dalam satu folder, gunakan: $ git clone git@github.com:bagustris/TugasAkhir-ICA.git
+Untuk mengcopy file ini dalam satu folder, gunakan: $ git clone https://github.com:bagustris/TugasAkhir-ICA.git
 
 
 
