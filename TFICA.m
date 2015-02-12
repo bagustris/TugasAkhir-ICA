@@ -1,10 +1,10 @@
 %MSICA 1= TDICA + FDICA with Natural Gradient
 %-------------------------TDICA------------------------------------------
-close all, clear all, clc;
+close all, clear all; clc;
 % Time Domain ICA with Natural Gradient Algorithm
 
-mic_1=wavread('2mic11');
-mic_2=wavread('2mic12');
+mic_1=wavread('x11.wav');
+mic_2=wavread('x12.wav');
 
 % a=wavread('normal');
 % aa=(a./0.001);
@@ -32,11 +32,10 @@ subplot(212); plot(mic_2);
 mix=[mic_1;mic_2];             %mencampur file suara
 
 [N,P]=size(mix);               %P=sampled time=50000;N=number of input=3
-permute=randperm(N);            %generate a permutation vector
+permute=randperm(N);           %generate a permutation vector
 s=mix(permute,:);              %time-scrambled inputs for stationarity
 
 x=s;
-mix=mix;
 
 mx=mean(mix');
 c=cov(mix');
@@ -103,12 +102,12 @@ Id=eye(M);
 
 L=0.00001; B=30; for I=1:100, sep; end;          %ITERASI FDICA
 
-yy=w*wz*mixes;                      % memisahkan sinyal dalam domain frekuensi
+yy=w*wz*mixes;                  % memisahkan sinyal dalam domain frekuensi
 yy11=yy(1,f);
 yy12=yy(2,f);
 
 % plot frekuensi spektra sinyal estimasi
-figure(4)                           
+figure(4);                          
 subplot(211); plot(yy11);
 subplot(212); plot(yy12);
 
@@ -117,7 +116,7 @@ yy11=real(ifft(yy(1,:)));
 yy12=real(ifft(yy(2,:))); 
 
 % Plot time domain sinyal estimasi akhir
-figure(5)
+figure(5);
 subplot(211); plot(yy11);
 subplot(212); plot(yy12);
 %---------------END OF PROGRAM--------------------------------------------- 

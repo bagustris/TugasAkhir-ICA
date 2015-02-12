@@ -65,20 +65,7 @@ Tiga tahapan, bila ada hardware baru yang dihubungkan ke matlab:
 3.Trials
 
 
--->Kalibaris mic
-misalnya input suara 10 dB SPL apakah proporsional dengan tegangan yang terbaca pada
-output dari soundcard bila suara dinaikkan 20, lalu 30, 40, 50 dB SPL...?
-sebaiknya ini dilakukan dulu sebelum pengukuran.
-ada ketidak kompatibelan antara software dan hardware.
-coba pakai matlab dengan function audioplayer/audiorecord
-lihat juga function2 pada data acquisition toolbox.
-Bukan berarti pakai adobe audition bisa, terus perekaman dan hasil perekaman
-merupakan data yang reliable untuk dilakukan analisis lanjut.
-Kalau ada ketidakkonsistenan dalam perekaman, maka data yg diperoleh akan bias dan
-hasil analisanya juga tidak bisa dipercaya.
----di help matlab ada linearly input-output?
-
--->recording
+-->Kalibaris mic/recording
 sewaktu perekaman, apakah sudah dilakukan kalibrasi ?
 misalnya input suara 10 dB SPL apakah proporsional dengan tegangan yang terbaca pada
 output dari soundcard bila suara dinaikkan 20, lalu 30, 40, 50 dB SPL ?

@@ -1,12 +1,12 @@
 % Frequency Domain ICA (FDICA) with Natural Gradient Algorithm
 clear all; close all; format compact; clf;
 
-[mic_1, Fs]=wavread('x11.wav');         % baca file wav sensor1
-mic_2=wavread('x12.wav');               % baca file wav sensor2
+[mic_1, Fs]=wavread('x11.wav');         %
+mic_2=wavread('x12.wav');
 
-f=[1:Fs/2];                             % f = 1 sampai dg Fs/2 utk sb-x
+f=[1:Fs/2];
 
-mixfrek=[real(fft(mic_1'));real(fft(mic_2'))];  % menggabung dlm 1 matrik
+mixfrek=[real(fft(mic_1'));real(fft(mic_2'))];
 
 figure(1)
 subplot(211); plot(mic_1);
@@ -35,7 +35,7 @@ wz=2*inv(sqrtm(c));             % Get decorrelating matrix.
 x=wz*x;                         % Decorrelate mixes so cov(x')=4*eye(N); 
 
 %w=[1 1; 1 2];
-w=pi^2*rand(N);                 % Initialise unmixing matrix. 
+w=pi^2*rand(N);                % Initialise unmixing matrix. 
 M=size(w,2);                    % M=N usually, determined 
 sweep=0; oldw=w; olddelta=ones(1,N*N); 
 Id=eye(M); 

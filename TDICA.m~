@@ -13,11 +13,14 @@ figure(1)
 subplot(211); plot(mic_1);
 subplot(212); plot(mic_2);
 
-mix=[mic_1';mic_2'];             %mixing file
+mix=[mic_1;mic_2];             %mixing file
 
 %P=number of data points
 [N,P]=size(mix);               %P=sampled time=50000;N=number of input=3
-x=mix;
+permute=randperm(N);           %generate a permutation vector
+s=mix(permute,:);              %time-scrambled inputs for stationarity
+
+x=s;
 
 mx=mean(mix');
 c=cov(mix');

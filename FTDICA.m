@@ -3,8 +3,8 @@
 clear, clf, format compact;
 %Input sinyal dari Mic Array
 
-mic_1=wavread('2mic21');               %memperkecil dan menyamakan sinyal
-mic_2=wavread('2mic22');
+mic_1=wavread('x11.wav');               %memperkecil dan menyamakan sinyal
+mic_2=wavread('x12.wav');
 
 % a=wavread('normal');
 % aa=(a./0.001);
@@ -20,10 +20,8 @@ mic_2=mic_2';
 mic_1=mic_1(1:50000);               %memperkecil dan menyamakan sinyal
 mic_2=mic_2(1:50000);
 
-
 size(mic_1)                         % mengetahui ukuran/dimensi sinyal 
 size(mic_2)
-
 
 % Plot waveform sinyal input dlm domain waktu
 figure(1)
@@ -35,7 +33,7 @@ title('Waveform Sinyal Microphone 2')
 ylabel('Amplitude');
 
 Fs=11025;                           % Sampling frequency 
-f=[1:Fs/2]; 
+f=[1:Fs/2];                         % 
 
 % Mencampur dan merubah sinyal input ke dalam domain frekuensi
 mixfrek=[real(fft(mic_1));real(fft(mic_2))];  
@@ -51,9 +49,8 @@ ylabel('Amplitude');
 
 
 [N,P]=size(mixfrek);                % P=50000, N=3, in this case. 
-permute=randperm(P);                % Generate a permutation vector. 
-x=mixfrek(:,permute);               % Time-scrambled inputs for stationarity.                        
- 
+x=mixfrek;
+
 % Pre-Processing: Spheres the data (normalisation). 
 mx=mean(mixfrek');  
 c=cov(mixfrek'); 
@@ -88,7 +85,6 @@ ylabel('Amplitude');
 uu11=real(ifft(uu(1,:)));
 uu12=real(ifft(uu(2,:))); 
 
-
 %Plot wavevorm ouput FDICA/input TDICA
 figure(4);
 subplot(211);plot(uu11);
@@ -106,7 +102,6 @@ permute=randperm(N);                %generate a permutation vector
 s=mix(permute,:);                   %time-scrambled inputs for stationarity
 
 x=s;
-
 
 mx=mean(mix');
 c=cov(mix');
@@ -126,7 +121,6 @@ L=0.000001; B=30; for I=1:100, sep; end;          %ITERASI TDICA
 yy=w*wz*mix;                        % make unmixed sources
 yy11=yy(1,:);
 yy12=yy(2,:);
-
 
 % Plot sinyal estimasi TDICA
 figure(5);

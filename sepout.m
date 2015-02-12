@@ -1,4 +1,4 @@
-% SEPOUT - put whatever textual output report you want here.
+%  SEPOUT - put whatever textual output report you want here.
 %  Called after each pass through the data.
 %  If your data is real, not artificially mixed, you will need
 %  to comment out line 4, since you have no idea what the matrix 'a' is.
