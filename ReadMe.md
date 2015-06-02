@@ -1,6 +1,6 @@
 TugasAkhir-ICA/ReadMe.md - Panduan Skrip Tugas Akhir bagustris (Final Project Matlab's Code)
-<br/>Judul : Pemisahan Banyak Sumber Suara Mesin Dengan Metode Independent Component Analysis Untuk Deteksi Kerusakan]
-<br/>          Machines Sound Source Separation using ICA for fault deterction
+<br/>Judul : Pemisahan Banyak Sumber Suara Mesin Dengan Metode Independent Component Analysis Untuk Deteksi Kerusakan
+<br/>          (Machines Sound Source Separation using ICA for fault deterction)
 <br/>Tahun : 2009
 <br/>NRP: 2405100019
 <br/>Programming Language: Matlab/Octave
