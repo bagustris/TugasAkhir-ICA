@@ -5,7 +5,7 @@ TugasAkhir-ICA/ReadMe.md - Panduan Skrip Tugas Akhir bagustris (Final Project Ma
 <br/>NRP: 2405100019
 <br/>Programming Language: Matlab/Octave
 
-File pdf: [TABagus.pdf](https://dl.dropboxusercontent.com/u/91803768/TAbagus.pdf)
+File pdf: [TABagus.pdf](https://www.dropbox.com/s/rw5onl2nxzrqrqj/TAbagus.pdf?dl=0)
 
 List file:
 
